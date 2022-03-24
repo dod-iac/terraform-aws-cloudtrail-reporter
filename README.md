@@ -31,7 +31,7 @@ TODO update example
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudwatch_kms_key"></a> [cloudwatch\_kms\_key](#module\_cloudwatch\_kms\_key) | dod-iac/cloudwatch-kms-key/aws | >1.0.0 |
+| <a name="module_cloudwatch_kms_key"></a> [cloudwatch\_kms\_key](#module\_cloudwatch\_kms\_key) | dod-iac/cloudwatch-kms-key/aws | ~>1.0 |
 | <a name="module_logging_bucket"></a> [logging\_bucket](#module\_logging\_bucket) | trussworks/s3-private-bucket/aws | >=3.7.1 |
 | <a name="module_s3_kms_key"></a> [s3\_kms\_key](#module\_s3\_kms\_key) | git::https://github.com/dod-iac/terraform-aws-s3-kms-key.git | rms-extending-principals |
 

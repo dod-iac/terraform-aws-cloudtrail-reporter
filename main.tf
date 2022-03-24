@@ -174,7 +174,7 @@ module "cloudwatch_kms_key" {
   source  = "dod-iac/cloudwatch-kms-key/aws"
   name    = "alias/name"
   tags    = var.tags
-  version = ">1.0.0"
+  version = "~>1.0"
 }
 
 
