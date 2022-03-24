@@ -164,7 +164,7 @@ module "s3_kms_key" {
   source      = "git::https://github.com/dod-iac/terraform-aws-s3-kms-key.git?ref=rms-extending-principals"
   name        = format("alias/%s-logging-kms", local.name_prefix)
   description = format("A KMS key used to encrypt objects at rest in S3 for %s:%s.", local.application, local.environment)
-  principals = [
+  principals_extended = [
     { identifiers = ["cloudtrail.amazonaws.com"], type = "Service" }
   ]
   tags = var.tags
