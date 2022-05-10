@@ -132,7 +132,8 @@ module "logging_bucket" {
     Name = format("%s-cloudtrail-bucket", local.name_prefix)
     }
   )
-  noncurrent_version_expiration = 30
+
+  noncurrent_version_expiration = 90
   transitions = [
     {
       days          = 30
