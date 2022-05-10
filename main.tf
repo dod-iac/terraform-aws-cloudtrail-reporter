@@ -241,6 +241,7 @@ resource "aws_cloudwatch_log_subscription_filter" "test_lambdafunction_logfilter
 
 data "aws_iam_policy_document" "test" {
   statement {
+    sid    = "ExternalAccess"
     effect = "Allow"
     actions = [
       "events:*"
