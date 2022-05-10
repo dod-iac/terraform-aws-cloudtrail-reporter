@@ -236,6 +236,7 @@ resource "aws_cloudwatch_log_subscription_filter" "test_lambdafunction_logfilter
   filter_pattern  = "{$.readOnly is FALSE}"
   destination_arn = var.kinesis_stream_arn
   distribution    = "Random"
+  depends_on = [aws_cloudwatch_event_permission.this]
 }
 
 resource "aws_cloudwatch_event_permission" "this" {
