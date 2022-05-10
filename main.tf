@@ -239,10 +239,26 @@ resource "aws_cloudwatch_log_subscription_filter" "test_lambdafunction_logfilter
   depends_on = [aws_cloudwatch_event_permission.this]
 }
 
-resource "aws_cloudwatch_event_permission" "this" {
-  principal    = var.target_account
-  statement_id = format("%s-elmo-access", local.name_prefix)
+data "aws_iam_policy_document" "test" {
+  statement {
+    effect = "Allow"
+    actions = [
+      "events:*"
+    ]
+    resources = [
+      "*"
+    ]
 
+    principals {
+      type        = "AWS"
+      identifiers = [var.target_account]
+    }
+
+    
+  }
 }
 
+resource "aws_cloudwatch_event_bus_policy" "this" {
+  policy         = data.aws_iam_policy_document.test.json
+}
 
