@@ -241,9 +241,6 @@ resource "aws_cloudwatch_log_subscription_filter" "test_lambdafunction_logfilter
 resource "aws_cloudwatch_event_permission" "this" {
   principal    = var.target_account
   statement_id = format("%s-elmo-access", local.name_prefix)
-  #TODO lock down more if works
-  action = "events:*"
-
 
 }
 
