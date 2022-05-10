@@ -119,6 +119,7 @@ data "aws_iam_policy_document" "this" {
   }
 }
 
+#tfsec:ignore:aws-s3-enable-bucket-logging
 module "logging_bucket" {
   source               = "trussworks/s3-private-bucket/aws"
   bucket               = format("%s-logging", local.name_prefix)
@@ -131,6 +132,7 @@ module "logging_bucket" {
     Name = format("%s-cloudtrail-bucket", local.name_prefix)
     }
   )
+  noncurrent_version_expiration = 30
   transitions = [
     {
       days          = 30
@@ -161,7 +163,7 @@ module "logging_bucket" {
 
 module "s3_kms_key" {
   #source = "dod-iac/s3-kms-key/aws"
-  source      = "git::https://github.com/dod-iac/terraform-aws-s3-kms-key.git?ref=rms-extending-principals"
+  source      = "git::https://github.com/dod-iac/terraform-aws-s3-kms-key"
   name        = format("alias/%s-logging-kms", local.name_prefix)
   description = format("A KMS key used to encrypt objects at rest in S3 for %s:%s.", local.application, local.environment)
   principals_extended = [
