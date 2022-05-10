@@ -21,6 +21,9 @@ variable "role_arn" {
 variable "kinesis_stream_arn" {
   type = string
 }
+variable "target_account" {
+  type = string
+}
 
 
 locals {

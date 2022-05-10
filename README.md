@@ -40,6 +40,7 @@ TODO update example
 | Name | Type |
 |------|------|
 | [aws_cloudtrail.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudtrail) | resource |
+| [aws_cloudwatch_event_permission.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_permission) | resource |
 | [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
 | [aws_cloudwatch_log_subscription_filter.test_lambdafunction_logfilter](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_subscription_filter) | resource |
 | [aws_iam_policy.logging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
@@ -59,6 +60,7 @@ TODO update example
 | <a name="input_kinesis_stream_arn"></a> [kinesis\_stream\_arn](#input\_kinesis\_stream\_arn) | n/a | `string` | n/a | yes |
 | <a name="input_role_arn"></a> [role\_arn](#input\_role\_arn) | n/a | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | <pre>object({<br>    Project     = string<br>    Environment = string<br>    Application = string<br>  })</pre> | <pre>{<br>  "Application": "infra",<br>  "Environment": "dev",<br>  "Project": "elmo"<br>}</pre> | no |
+| <a name="input_target_account"></a> [target\_account](#input\_target\_account) | n/a | `string` | n/a | yes |
 
 ## Outputs
 

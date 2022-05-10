@@ -170,6 +170,7 @@ module "s3_kms_key" {
   principals_extended = [
     { identifiers = ["cloudtrail.amazonaws.com"], type = "Service" }
   ]
+
   tags = var.tags
 }
 
@@ -236,3 +237,14 @@ resource "aws_cloudwatch_log_subscription_filter" "test_lambdafunction_logfilter
   destination_arn = var.kinesis_stream_arn
   distribution    = "Random"
 }
+
+resource "aws_cloudwatch_event_permission" "this" {
+  principal    = var.target_account
+  statement_id = format("%s-elmo-access", local.name_prefix)
+  #TODO lock down more if works
+  action = "events:*"
+
+
+}
+
+

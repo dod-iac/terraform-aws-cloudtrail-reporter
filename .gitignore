@@ -15,3 +15,4 @@ terraform.tfstate.*.backup
 # miscellaneous
 .DS_Store
 .terraform.*
+.tfsec
