@@ -15,9 +15,6 @@ variable "include_global_service_events" {
   type    = bool
   default = true
 }
-variable "role_arn" {
-  type = string
-}
 variable "kinesis_stream_arn" {
   type = string
 }

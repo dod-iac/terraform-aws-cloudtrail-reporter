@@ -233,7 +233,6 @@ resource "aws_iam_role" "cloudwatch" {
 
 resource "aws_cloudwatch_log_subscription_filter" "test_lambdafunction_logfilter" {
   name            = format("%s-cloudtrail-subscription", local.name_prefix)
-  role_arn        = var.role_arn
   log_group_name  = aws_cloudwatch_log_group.this.name
   filter_pattern  = "{$.readOnly is FALSE}"
   destination_arn = var.kinesis_stream_arn
