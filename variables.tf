@@ -18,6 +18,10 @@ variable "include_global_service_events" {
 variable "kinesis_stream_arn" {
   type = string
 }
+variable "enable_bucket_force_destroy"{
+  type = bool
+  default = true
+}
 
 
 

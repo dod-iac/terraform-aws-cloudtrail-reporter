@@ -122,7 +122,7 @@ data "aws_iam_policy_document" "this" {
 #tfsec:ignore:aws-s3-enable-bucket-logging
 module "logging_bucket" {
   source               = "trussworks/s3-private-bucket/aws"
-  force_destroy = true
+  enable_bucket_force_destroy = var.enable_bucket_force_destroy
   bucket               = format("%s-logging", local.name_prefix)
   version              = ">=3.7.1"
   kms_master_key_id    = module.s3_kms_key.aws_kms_key_id
