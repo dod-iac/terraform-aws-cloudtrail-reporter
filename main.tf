@@ -128,6 +128,7 @@ module "logging_bucket" {
   kms_master_key_id    = module.s3_kms_key.aws_kms_key_id
   custom_bucket_policy = data.aws_iam_policy_document.this.json
   sse_algorithm        = "aws:kms"
+  enable_bucket_force_destroy = true
 
   tags = merge(var.tags, {
     Name = format("%s-cloudtrail-bucket", local.name_prefix)
